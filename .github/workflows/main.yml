@@ -17,8 +17,8 @@ jobs:
       - name: ⌛ Install dependencies
         run: npm install
 
-      - name: 🚧 Build
-        run: npm run build
+      - name: 🚧 Build & Export
+        run: npm run export
 
       - name: 📂 Upload to server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
