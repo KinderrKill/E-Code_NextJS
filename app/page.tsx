@@ -1,91 +1,79 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+'use client';
+import React, { useEffect, useRef } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+import ContactSection from './components/contactSection';
+import Header from './components/header';
+import PortfolioSection from './components/portfolioSection';
+import PresentationSection from './components/presentationSection';
+import SectionServices from './components/sectionServices';
+
+import RocketIcon from './assets/rocket.webp';
+import Image from 'next/image';
+import Footer from './components/shared/footer';
 
 export default function Home() {
+  const scrollToTopButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const currentButtonRef = scrollToTopButtonRef.current;
+    if (!currentButtonRef) return;
+
+    window.addEventListener('scroll', () => displayScrollToTopButton(currentButtonRef));
+
+    return () => {
+      window.removeEventListener('scroll', () => displayScrollToTopButton(currentButtonRef));
+    };
+  }, [scrollToTopButtonRef]);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+      <section className='h-screen bg-gradient-to-b from-[#d47a60] to-[#7f54c1]'>
+        <Header />
+        {/* <ResponsiveDebugDisplay /> */}
+      </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+      <section>
+        <SectionServices />
+        <PortfolioSection />
+        <PresentationSection />
+        <ContactSection />
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <Footer />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      {/* Scroll to top button */}
+      <span
+        ref={scrollToTopButtonRef}
+        className='fixed sm:block -bottom-20 right-3 z-10 w-10 transition-all 
+        hover:animate-pulse cursor-pointer hover:scale-110 '
+        onClick={scrollToTop}>
+        <Image src={RocketIcon} className='-rotate-45' alt='Rocket icons created by Freepik - Flaticon' />
+      </span>
     </main>
-  )
+  );
+}
+
+function scrollToTop(event: React.MouseEvent): void {
+  event.preventDefault();
+  window.scrollTo(0, 0);
+}
+
+function displayScrollToTopButton(button: HTMLButtonElement | null): void {
+  if (!button) return;
+
+  if (window.pageYOffset > document.documentElement.clientHeight) button.style.bottom = '1.5rem';
+  else button.style.bottom = '-5rem';
+}
+
+// Utils for responsive design bases on Tailwind breakpoint
+function ResponsiveDebugDisplay(): JSX.Element {
+  return (
+    <div className='fixed top-0 left-0 bg-black p-2 z-10 flex flex-col'>
+      <span className='text-red-500 2xl:text-green-500'>DEBUG 2XL</span>
+      <span className='text-red-500 xl:text-green-500'>DEBUG XL</span>
+      <span className='text-red-500 lg:text-green-500'>DEBUG LG</span>
+      <span className='text-red-500 md:text-green-500'>DEBUG MD</span>
+      <span className='text-red-500 sm:text-green-500'>DEBUG SM</span>
+    </div>
+  );
 }

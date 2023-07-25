@@ -1,0 +1,38 @@
+<svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1076" viewBox="0 0 1920 1076">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.167" y1="-0.381" x2="0.843" y2="0.834" gradientUnits="objectBoundingBox">
+      <stop offset="0"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#797ed2"/>
+      <stop offset="1" stop-color="#222446"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9aa1e2"/>
+      <stop offset="0.318" stop-color="#c4c8ee"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Copie">
+      <rect width="1920" height="1076"/>
+    </clipPath>
+  </defs>
+  <g id="Copie" clip-path="url(#clip-Copie)">
+    <rect width="1920" height="1076" fill="rgba(255,255,255,0)"/>
+    <g id="Illustration" transform="translate(-19 0.005)">
+      <g id="Lumiere" transform="translate(-139.979 -0.005)">
+        <g id="Spote_lumineux_" data-name="Spote lumineux " transform="translate(811.282)">
+          <g id="Groupe_26" data-name="Groupe 26">
+            <path id="Tracé_57" data-name="Tracé 57" d="M174.821,40.016A11.216,11.216,0,0,0,163.6,28.8H11.468A11.469,11.469,0,0,0,0,40.269v8.689a23.5,23.5,0,0,0,13.215,21.13c13.278,7.823,41.621,13.228,74.448,13.228,40.03,0,73.39-8.037,80.895-18.7a23.91,23.91,0,0,0,6.263-16.166Z" transform="translate(235.473 -28.8)" fill="url(#linear-gradient-2)"/>
+            <path id="Tracé_58" data-name="Tracé 58" d="M171.521,54.781c0,10.6-34.155,19.187-76.287,19.187s-76.286-8.59-76.286-19.187S53.1,35.594,95.234,35.594s76.287,8.59,76.287,19.187" transform="translate(227.648 -22.8)" fill="url(#linear-gradient-3)"/>
+            <path id="Lumiere-2" data-name="Lumiere" d="M1026.8,22.05c11.777,21.362,125.61,24.179,151.038,2.932,18.15,37.983,215.554,595.281,215.554,595.281H780.16Z" transform="translate(-780.16 11.2)" opacity="0.2" fill="url(#linear-gradient-4)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Roboto:wght@500;700&display=swap');
+
+// Animation utils
+@import './components/animations.scss';
+
+$bg-color-primary: #1b1e3d;
+$bg-color-secondary: #171a34;
+$bg-color-third: #282b5a;
+
+$color-secondary: #cc3b45;
+
+:root {
+  --font-roboto: 'Roboto', monospace, sans-serif;
+  --font-designer: 'DESIGNER', 'monospace', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  font-family: var(--font-roboto);
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-style: var(--font-mono);
+  background-color: #272a59;
+  color: white;
+}
+
+a {
+  color: #d2d5fd;
+  transition: color 200ms ease;
+
+  &:hover {
+    color: white;
+  }
+}
+
+button {
+  @apply bg-white hover:bg-gray-800 hover:text-white transition-all text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow;
+}
+
+input,
+textarea {
+  @apply w-full px-3 py-3 rounded-md bg-secondary bg-opacity-90 border border-white border-opacity-50;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060a1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9093ce;
+  border-radius: 5px;
+  border: 1px solid #060a1b;
+}

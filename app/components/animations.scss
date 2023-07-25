@@ -1,0 +1,33 @@
+.animation {
+  &__small-rotate {
+    transform-origin: 75% 100%;
+    animation: smallRotate 10s infinite linear;
+  }
+
+  &__rotate {
+    transform-origin: 75% 100%;
+    animation: rotate 120s infinite linear;
+  }
+}
+
+// Animations
+@keyframes smallRotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(1.5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
