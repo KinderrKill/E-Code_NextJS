@@ -70,7 +70,7 @@ export default function Console() {
 
   return (
     <>
-      <div className={userOnMobile() ? 'movile-console-command' : 'console-command'} ref={consoleFrameRef}>
+      <div className={userOnMobile() ? 'mobile-console-command' : 'console-command'} ref={consoleFrameRef}>
         <div className='brand'>
           <div className='brand__dot'>
             <span className='brand__dot dot-red'></span>
@@ -79,7 +79,9 @@ export default function Console() {
           </div>
         </div>
         <div className='content'>
-          <span className='text-shadow'>E-Code - Version {APP_VERSION}</span>
+          <span className='text-shadow'>
+            E-Code - Version {APP_VERSION} | {userOnMobile() ? 'Mobile' : 'PC'}
+          </span>
           <p className='text-shadow'>&copy; {new Date().getFullYear()} Étienne S. Tout droits réservés</p>
           <div ref={typingWriterRef} id='typing-writer' className='text-gray-300 mt-5 whitespace-pre-wrap'></div>
         </div>
