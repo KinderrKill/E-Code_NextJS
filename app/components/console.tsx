@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import './_console.scss';
 
 import TypingWriter from '../tools/typingWriter';
-import { APP_VERSION } from '../utils/constants';
+import { APP_VERSION, userOnMobile } from '../utils/constants';
 
 export default function Console() {
   const consoleFrameRef = useRef<HTMLDivElement>(null);
@@ -14,6 +14,8 @@ export default function Console() {
   let writer: TypingWriter | null = null;
 
   useEffect(() => {
+    if (userOnMobile()) return;
+
     const panel = consoleFrameRef.current;
     if (!panel) return;
 
@@ -68,7 +70,7 @@ export default function Console() {
 
   return (
     <>
-      <div className='console-command' ref={consoleFrameRef}>
+      <div className={userOnMobile() ? 'movile-console-command' : 'console-command'} ref={consoleFrameRef}>
         <div className='brand'>
           <div className='brand__dot'>
             <span className='brand__dot dot-red'></span>
